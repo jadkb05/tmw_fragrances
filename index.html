@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMW Fragrances — Parfums de luxe &amp; niche | Casablanca, Maroc</title>
+  <meta name="description" content="Boutique de parfums à Casablanca : maisons de luxe, niche, oriental et frais. Commande par WhatsApp. Livraison au Maroc. L’élégance, l’essence de vous." />
+  <meta name="geo.region" content="MA" />
+  <meta name="geo.placename" content="Casablanca" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TMW Fragrances — Parfums de luxe &amp; niche | Casablanca" />
+  <meta property="og:description" content="Sélection prestige : designer, niche, orientaux. Prix en DH, commande WhatsApp. Casablanca, Maroc." />
+  <meta property="og:image" content="images/logo-tmw.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TMW Fragrances — Casablanca" />
+  <meta name="twitter:description" content="Parfums de luxe et niche. Commande par WhatsApp." />
+  <link rel="icon" href="images/logo-tmw.png" type="image/png" sizes="any" />
+  <link rel="apple-touch-icon" href="images/logo-tmw.png" />
+  <link rel="preload" href="images/logo-tmw.png" as="image" type="image/png" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0c0c0c;
+      --white: #faf9f7;
+      --cream: #f5f1ea;
+      --gold: #c4a574;
+      --gold-soft: #dcc9a8;
+      --muted: #6b6560;
+      --border: rgba(196, 165, 116, 0.35);
+      --header-h: 4.6rem;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(1.75rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroAmbient {
+      0%,
+      100% {
+        opacity: 0.45;
+        transform: scale(1) translate(0, 0);
+      }
+      50% {
+        opacity: 0.75;
+        transform: scale(1.08) translate(2%, -2%);
+      }
+    }
+
+    @keyframes cardEnterStagger {
+      from {
+        opacity: 0;
+        transform: translateY(1.35rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(2.25rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes trustFade {
+      from {
+        opacity: 0;
+        transform: translateY(0.65rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes shineLine {
+      from {
+        transform: scaleX(0.3);
+        opacity: 0.35;
+      }
+      to {
+        transform: scaleX(1);
+        opacity: 0.65;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 3rem));
+      margin-inline: auto;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: calc(100% - 2rem);
+      }
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      isolation: isolate;
+      height: var(--header-h);
+      background: rgba(10, 10, 10, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 105, 0.28);
+      transition:
+        box-shadow 0.4s var(--ease),
+        border-color 0.4s var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.42);
+      border-bottom-color: rgba(212, 175, 105, 0.14);
+    }
+
+    .site-header .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .site-logo {
+      height: 48px;
+      width: auto;
+      max-width: min(210px, 42vw);
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      .site-logo {
+        height: 40px;
+        max-width: min(180px, 48vw);
+      }
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-desktop a {
+      position: relative;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(250, 249, 247, 0.72);
+      transition: color 0.25s var(--ease);
+    }
+
+    .nav-desktop a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+      transition: width 0.38s var(--ease-out);
+    }
+
+    .nav-desktop a:hover,
+    .nav-desktop a:focus-visible {
+      color: var(--gold-soft);
+      outline: none;
+    }
+
+    .nav-desktop a:hover::after,
+    .nav-desktop a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      color: rgba(250, 249, 247, 0.92);
+      border: 1px solid rgba(212, 175, 105, 0.35);
+      border-radius: 2px;
+    }
+
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: var(--header-h);
+      padding: 1.5rem 1.5rem 2rem;
+      background: #0c0c0c;
+      border-bottom: 1px solid rgba(212, 175, 105, 0.28);
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .nav-mobile.is-open {
+      display: flex;
+    }
+
+    .nav-mobile a {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(250, 249, 247, 0.92);
+      padding: 0.35rem 0;
+    }
+
+    .nav-mobile a:hover,
+    .nav-mobile a:focus-visible {
+      color: var(--gold-soft);
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-desktop {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4rem, 12vw, 8rem) 0 clamp(5rem, 14vw, 9rem);
+      background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40% -20% auto -20%;
+      height: 85%;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(196, 165, 116, 0.14) 0%, transparent 68%);
+      pointer-events: none;
+      animation: heroAmbient 16s var(--ease) infinite alternate;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .wrap > * {
+      animation: heroFadeUp 1s var(--ease-out) backwards;
+    }
+
+    .hero .wrap > *:nth-child(1) {
+      animation-delay: 0.06s;
+    }
+
+    .hero .wrap > *:nth-child(2) {
+      animation-delay: 0.14s;
+    }
+
+    .hero .wrap > *:nth-child(3) {
+      animation-delay: 0.22s;
+    }
+
+    .hero .wrap > *:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .hero .wrap > *:nth-child(5) {
+      animation-delay: 0.38s;
+    }
+
+    .hero h1 {
+      margin: 0 auto;
+      max-width: 15ch;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.35rem, 6vw, 3.75rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      margin: 1.75rem auto 0;
+      max-width: 38rem;
+      font-size: 1.0625rem;
+      font-weight: 300;
+      color: var(--muted);
+    }
+
+    .hero-accent {
+      margin-top: 2.5rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-meta {
+      margin: 1rem auto 0;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .hero-meta a {
+      color: var(--gold);
+      font-weight: 500;
+      transition: color 0.25s var(--ease);
+    }
+
+    .hero-meta a:hover,
+    .hero-meta a:focus-visible {
+      color: var(--black);
+      outline: none;
+    }
+
+    .section-head {
+      position: relative;
+      text-align: center;
+      margin-bottom: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    .section-head h2::after {
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.65;
+      transform-origin: center;
+      animation: shineLine 1.15s var(--ease-out) 0.35s both;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(1.85rem);
+      transition: transform 0.85s var(--ease-out);
+      will-change: transform;
+    }
+
+    .reveal.is-revealed {
+      transform: translateY(0);
+      will-change: auto;
+    }
+
+    .trust-strip.trust-visible .wrap span {
+      animation: trustFade 0.65s var(--ease-out) backwards;
+    }
+
+    .trust-strip.trust-visible .wrap span:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .trust-strip.trust-visible .wrap span:nth-child(2) {
+      animation-delay: 0.14s;
+    }
+
+    .trust-strip.trust-visible .wrap span:nth-child(3) {
+      animation-delay: 0.23s;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.85rem, 4vw, 2.5rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 1rem auto 0;
+      max-width: 34rem;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--muted);
+    }
+
+    #parfums {
+      padding: clamp(4.5rem, 10vw, 6.5rem) 0;
+      background: var(--white);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.65rem;
+      justify-content: center;
+      margin-bottom: clamp(2.25rem, 5vw, 3rem);
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .filter-btn {
+      padding: 0.55rem 1rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: var(--white);
+      transition:
+        background 0.25s var(--ease),
+        color 0.25s var(--ease),
+        border-color 0.25s var(--ease),
+        box-shadow 0.25s var(--ease),
+        transform 0.18s var(--ease);
+      border-radius: 2px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn:focus-visible {
+      color: var(--black);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .filter-btn.is-active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+      box-shadow: 0 8px 24px rgba(12, 12, 12, 0.12);
+    }
+
+    .filter-btn:active {
+      transform: scale(0.96);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.75rem, 4vw, 2.25rem);
+    }
+
+    @media (max-width: 960px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cards-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 0.9375rem;
+      animation: revealUp 0.55s var(--ease-out) both;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition:
+        transform 0.45s var(--ease),
+        box-shadow 0.45s var(--ease),
+        border-color 0.35s var(--ease);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border: 1px solid transparent;
+      transition: border-color 0.35s var(--ease);
+    }
+
+    .card.card--enter {
+      opacity: 0;
+      animation: cardEnterStagger 0.58s var(--ease-out) forwards;
+      animation-delay: calc(var(--i, 0) * 38ms);
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 56px rgba(12, 12, 12, 0.08);
+      border-color: rgba(196, 165, 116, 0.55);
+    }
+
+    .card:hover::after,
+    .card:focus-within::after {
+      border-color: rgba(196, 165, 116, 0.4);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: linear-gradient(160deg, #ebe6de 0%, #e2d9cc 100%);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      z-index: 2;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: rgba(250, 249, 247, 0.95);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
+
+    .card-badge.badge-niche {
+      background: rgba(12, 12, 12, 0.88);
+      color: var(--gold-soft);
+      border-color: rgba(196, 165, 116, 0.5);
+    }
+
+    .card-badge.badge-oriental {
+      background: rgba(92, 68, 48, 0.9);
+      color: var(--cream);
+      border-color: rgba(196, 165, 116, 0.45);
+    }
+
+    .card-badge.badge-frais {
+      background: rgba(230, 242, 248, 0.95);
+      color: #2c3d44;
+      border-color: rgba(120, 160, 180, 0.35);
+    }
+
+    .card-badge.badge-feminin {
+      background: rgba(60, 20, 35, 0.88);
+      color: #fce8ee;
+      border-color: rgba(200, 120, 140, 0.4);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.65s var(--ease), filter 0.45s var(--ease);
+      filter: saturate(1.02);
+    }
+
+    .card:hover .card-img-wrap img {
+      transform: scale(1.06);
+      filter: saturate(1.08);
+    }
+
+    .card-body {
+      padding: 1.6rem 1.45rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.5rem;
+    }
+
+    .card-body h3 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: 1.28rem;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .card-brand {
+      margin: 0;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .card-desc {
+      margin: 0;
+      flex: 1;
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .card-price {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card-price .amount {
+      display: inline-block;
+      margin-right: 0.35rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: var(--black);
+    }
+
+    .btn-wa {
+      margin-top: 1.1rem;
+      width: 100%;
+      padding: 0.95rem 1rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      transition:
+        background 0.25s var(--ease),
+        color 0.25s var(--ease),
+        border-color 0.25s var(--ease),
+        transform 0.2s var(--ease);
+    }
+
+    .btn-wa:hover,
+    .btn-wa:focus-visible {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .btn-wa:active {
+      transform: scale(0.98);
+    }
+
+    #contact {
+      padding: clamp(4rem, 10vw, 5.5rem) 0;
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    #contact h2 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.65rem, 3.5vw, 2rem);
+    }
+
+    #contact > .wrap > p {
+      margin: 1rem auto 0;
+      max-width: 26rem;
+      font-weight: 300;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    .contact-links {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: var(--white);
+      transition: border-color 0.25s var(--ease);
+    }
+
+    .contact-links a:hover,
+    .contact-links a:focus-visible {
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .contact-qr {
+      margin: 2.75rem auto 0;
+      max-width: 200px;
+    }
+
+    .contact-qr-link {
+      display: block;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 42px rgba(12, 12, 12, 0.09);
+      transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease);
+      line-height: 0;
+    }
+
+    .contact-qr-link:hover,
+    .contact-qr-link:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(12, 12, 12, 0.12);
+      outline: none;
+    }
+
+    .contact-qr-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .contact-qr figcaption {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      padding: 2.25rem 0;
+      background: var(--black);
+      color: rgba(250, 249, 247, 0.85);
+      font-size: 0.8125rem;
+      font-weight: 300;
+    }
+
+    .site-footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--gold-soft);
+      transition: color 0.25s var(--ease);
+    }
+
+    .footer-social a:hover,
+    .footer-social a:focus-visible {
+      color: var(--white);
+      outline: none;
+    }
+
+    .footer-social svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .footer-copy {
+      color: rgba(250, 249, 247, 0.45);
+      font-size: 0.75rem;
+    }
+
+    .footer-location {
+      width: 100%;
+      margin-top: 0.35rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: rgba(250, 249, 247, 0.38);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      z-index: 200;
+      padding: 0.6rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--black);
+      border-radius: 2px;
+      transform: translateY(-120%);
+      transition: transform 0.25s var(--ease);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 2px solid var(--white);
+      outline-offset: 2px;
+    }
+
+    .hero-cta-row {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition:
+        background 0.28s var(--ease),
+        color 0.28s var(--ease),
+        border-color 0.28s var(--ease),
+        box-shadow 0.28s var(--ease),
+        transform 0.2s var(--ease);
+    }
+
+    .btn-hero-primary {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      box-shadow: 0 12px 32px rgba(12, 12, 12, 0.12);
+    }
+
+    .btn-hero-primary:hover,
+    .btn-hero-primary:focus-visible {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .btn-hero-secondary {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--border);
+    }
+
+    .btn-hero-secondary:hover,
+    .btn-hero-secondary:focus-visible {
+      border-color: var(--gold);
+      color: var(--gold);
+      outline: none;
+    }
+
+    .btn-hero:active {
+      transform: scale(0.98);
+    }
+
+    .trust-strip {
+      padding: 1.35rem 0;
+      background: var(--black);
+      color: rgba(250, 249, 247, 0.88);
+      border-bottom: 1px solid rgba(212, 175, 105, 0.22);
+    }
+
+    .trust-strip .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2.5rem;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .trust-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-strip span::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.75;
+    }
+
+    .filter-scroll {
+      margin-bottom: clamp(2.25rem, 5vw, 3rem);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+      mask-image: linear-gradient(90deg, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+      mask-size: 100% 100%;
+    }
+
+    .filter-scroll .filter-bar {
+      margin-bottom: 0;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      max-width: none;
+      padding-bottom: 0.35rem;
+    }
+
+    @media (min-width: 900px) {
+      .filter-scroll {
+        overflow: visible;
+        mask-image: none;
+      }
+
+      .filter-scroll .filter-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .contact-phone {
+      margin: 1.5rem auto 0;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-phone a {
+      color: var(--black);
+      border-bottom: 1px solid rgba(196, 165, 116, 0.45);
+      transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .contact-phone a:hover,
+    .contact-phone a:focus-visible {
+      color: var(--gold);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .contact-note {
+      margin: 0.65rem auto 0;
+      max-width: 28rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero::before {
+        animation: none;
+        opacity: 0.55;
+      }
+
+      .hero .wrap > * {
+        animation: none !important;
+      }
+
+      .section-head h2::after {
+        animation: none;
+        opacity: 0.65;
+        transform: none;
+      }
+
+      .card.card--enter {
+        opacity: 1;
+        animation: none;
+      }
+
+      .reveal {
+        transform: none;
+        transition: none;
+        will-change: auto;
+      }
+
+      .cards-empty {
+        animation: none;
+      }
+
+      .trust-strip .wrap span {
+        animation: none !important;
+      }
+
+      .card,
+      .card-img-wrap img,
+      .btn-wa,
+      .btn-hero,
+      .filter-btn {
+        transition-duration: 0.01ms !important;
+      }
+
+      .card:hover,
+      .card:focus-within {
+        transform: none;
+      }
+
+      .card:hover .card-img-wrap img {
+        transform: none;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "TMW Fragrances",
+      "description": "Boutique de parfums de luxe et de niche à Casablanca, Maroc.",
+      "image": "images/logo-tmw.png",
+      "telephone": "+212631143389",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Casablanca",
+        "addressCountry": "MA"
+      },
+      "sameAs": ["https://www.instagram.com/tmw_fragances/"]
+    }
+  </script>
+</head>
+<body>
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#accueil" class="logo-link" aria-label="TMW Fragrances — Accueil">
+        <img class="site-logo" src="images/logo-tmw.png" width="210" height="90" alt="TMW Fragrances — L’élégance, l’essence de vous" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#parfums">Parfums</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Ouvrir le menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <nav id="nav-mobile" class="nav-mobile" aria-label="Navigation mobile">
+      <a href="#accueil">Accueil</a>
+      <a href="#parfums">Parfums</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title">L’art du parfum, sans compromis.</h1>
+        <p class="hero-sub">
+          Une sélection de maisons prestigieuses et de créations de niche. Filtrez par univers olfactif, commandez en un message — service personnalisé depuis Casablanca, partout au Maroc.
+        </p>
+        <p class="hero-accent">L’élégance · L’essence de vous</p>
+        <p class="hero-meta">
+          <a href="https://www.instagram.com/tmw_fragances/" target="_blank" rel="noopener noreferrer">@tmw_fragances</a>
+          · Casablanca
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn-hero btn-hero-primary wa-num-link" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn-hero btn-hero-secondary" href="#parfums">Découvrir le catalogue</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="trust-strip" class="trust-strip" role="region" aria-label="Engagements">
+      <div class="wrap">
+        <span>Produits authentiques</span>
+        <span>Livraison au Maroc</span>
+        <span>Conseil personnalisé</span>
+      </div>
+    </div>
+
+    <section id="parfums" aria-labelledby="parfums-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <h2 id="parfums-title">Nos Parfums</h2>
+          <p>Photographies du showroom — prix indicatifs en dirhams (DH). Faites défiler les filtres sur mobile, puis affinez la grille en un clic.</p>
+        </header>
+
+        <div class="filter-scroll reveal">
+          <div class="filter-bar" role="toolbar" aria-label="Filtrer les parfums">
+            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">Tous</button>
+            <button type="button" class="filter-btn" data-filter="luxe" aria-pressed="false">Maisons de luxe</button>
+            <button type="button" class="filter-btn" data-filter="niche" aria-pressed="false">Parfums de niche</button>
+            <button type="button" class="filter-btn" data-filter="oriental" aria-pressed="false">Orientaux &amp; Oud</button>
+            <button type="button" class="filter-btn" data-filter="frais" aria-pressed="false">Frais &amp; sportifs</button>
+            <button type="button" class="filter-btn" data-filter="feminin" aria-pressed="false">Féminins</button>
+            <button type="button" class="filter-btn" data-filter="masculin" aria-pressed="false">Masculins</button>
+          </div>
+        </div>
+
+        <div id="perfume-grid" class="cards" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section reveal" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Une question&nbsp;?</h2>
+        <p>Écrivez-nous sur WhatsApp ou suivez nos nouveautés sur Instagram.</p>
+        <p class="contact-phone">
+          <a href="tel:+212631143389">+212 631 143 389</a>
+        </p>
+        <p class="contact-note">Réponse rapide du lundi au dimanche · Casablanca, Maroc</p>
+        <div class="contact-links">
+          <a class="wa-num-link" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/tmw_fragances/" target="_blank" rel="noopener noreferrer">Instagram — @tmw_fragances</a>
+        </div>
+        <figure class="contact-qr">
+          <a href="https://www.instagram.com/tmw_fragances/" target="_blank" rel="noopener noreferrer" class="contact-qr-link" aria-label="Ouvrir le profil Instagram @tmw_fragances">
+            <img src="images/instagram-qr.png" alt="Code QR Instagram — profil @tmw_fragances" width="400" height="400" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Ouvrez l’app Instagram et scannez pour suivre <strong>@tmw_fragances</strong>.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/tmw_fragances/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram · @tmw_fragances
+        </a>
+        <a class="wa-num-link" href="#" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div>
+        <p class="footer-copy">© <span id="year"></span> TMW Fragrances</p>
+        <p class="footer-location">Casablanca · Maroc</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      /* Numéro WhatsApp : chiffres uniquement (ici +212 631-143389 → 212631143389). */
+      var WA_NUMBER = "212631143389";
+      var MESSAGE_PREFIX = "Bonjour, je veux commander ";
+      var WA_GREETING = "Bonjour TMW Fragrances, ";
+      var motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function waUrl(perfumeName) {
+        return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(MESSAGE_PREFIX + perfumeName);
+      }
+
+      function waContactUrl() {
+        return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_GREETING);
+      }
+
+      /** cats: luxe | niche | oriental | frais — gender: feminin | masculin (mixte = les deux) */
+      var perfumes = [
+        { img: "carolina-herrera-212-vip-men.png", title: "212 VIP Men", brand: "Carolina Herrera", wa: "212 VIP Men de Carolina Herrera", price: 920, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Ambiance urbaine et cuirée — présence charismatique pour la soirée." },
+        { img: "montblanc-explorer.png", title: "Explorer", brand: "Montblanc", wa: "Explorer de Montblanc", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Bois aromatiques et agrumes — énergie voyageuse." },
+        { img: "chopard-rose-malaki.png", title: "Rose Malaki", brand: "Chopard", wa: "Rose Malaki de Chopard", price: 900, cats: ["luxe", "oriental"], gender: ["feminin", "masculin"], badge: "Oriental", badgeClass: "badge-oriental", desc: "Rose épicée et bois précieux — silhouette oriental chic." },
+        { img: "dg-q-and-k.png", title: "Q", brand: "Dolce & Gabbana", wa: "Q by Dolce & Gabbana", price: 980, cats: ["luxe"], gender: ["feminin"], badge: "Féminin", badgeClass: "badge-feminin", desc: "Couronne dorée — fragrance royale aux accents fruités et floraux.", imgPos: "25% center" },
+        { img: "dg-q-and-k.png", title: "K", brand: "Dolce & Gabbana", wa: "K by Dolce & Gabbana", price: 980, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Design roi — boisés et agrumes sophistiqués.", imgPos: "75% center" },
+        { img: "hugo-boss-bottled-elixir.png", title: "Boss Bottled Elixir", brand: "Hugo Boss", wa: "Boss Bottled Elixir", price: 950, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Élixir intense — contraste noir et or pour une présence affirmée." },
+        { img: "givenchy-gentleman-boisee.png", title: "Gentleman Boisée", brand: "Givenchy", wa: "Gentleman Givenchy Eau de Parfum Boisée", price: 920, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Iris et bois — élégance contemporaine très Givenchy." },
+        { img: "bvlgari-man-wood-neroli.png", title: "Man Wood Neroli", brand: "Bvlgari", wa: "Bvlgari Man Wood Neroli", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Néroli lumineux sur fond boisé — fraîcheur précieuse." },
+        { img: "tom-ford-ombre-leather.png", title: "Ombré Leather", brand: "Tom Ford", wa: "Ombré Leather de Tom Ford", price: 1950, cats: ["niche", "oriental"], gender: ["masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Cuir noir mat — silhouette minimaliste et puissante." },
+        { img: "creed-absolu-aventus.png", title: "Absolu Aventus", brand: "Creed", wa: "Creed Absolu Aventus", price: 2600, cats: ["niche", "oriental"], gender: ["masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Puissance moderne sur base Aventus — ultra collector." },
+        { img: "hermes-terre-dhermes.png", title: "Terre d’Hermès", brand: "Hermès", wa: "Terre d’Hermès", price: 1050, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Orange et minéraux iconiques — fraîcheur terreuse lumineuse." },
+        { img: "paco-rabanne-invictus-victory-elixir.png", title: "Invictus Victory Elixir", brand: "Paco Rabanne", wa: "Invictus Victory Elixir", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Trophée marine et ambre — intensité sportive chic." },
+        { img: "tuscany-leather.png", title: "Tuscany Leather", brand: "Private Blend style", wa: "Tuscany Leather", price: 1100, cats: ["niche", "oriental"], gender: ["masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Cuir et bois précieux — carré architectural noir et or." },
+        { img: "cartier-declaration.png", title: "Déclaration", brand: "Cartier", wa: "Cartier Déclaration", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Épices et bois sur citrus — signature française élégante." },
+        { img: "versace-eros.png", title: "Eros", brand: "Versace", wa: "Versace Eros", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Menthe et vanille méditerranéenne — fraîcheur mythique." },
+        { img: "jpg-scandal-pour-homme.png", title: "Scandal Pour Homme", brand: "Jean Paul Gaultier", wa: "Scandal Pour Homme de JPG", price: 900, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Couronne dorée — caramel boisé audacieux." },
+        { img: "paco-rabanne-1-million-elixir.png", title: "1 Million Elixir", brand: "Paco Rabanne", wa: "1 Million Elixir de Paco Rabanne", price: 900, cats: ["luxe", "oriental"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Lingot doré — vanille et bois torréfiés." },
+        { img: "burberry-hero.png", title: "Hero", brand: "Burberry", wa: "Burberry Hero", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Bois résineux et triple cèdre — britannique contemporain." },
+        { img: "armani-stronger-with-you-tobacco.png", title: "Stronger With You Tobacco", brand: "Emporio Armani", wa: "Stronger With You Tobacco", price: 920, cats: ["luxe", "oriental"], gender: ["masculin"], badge: "Oriental", badgeClass: "badge-oriental", desc: "Tabac enveloppant et vanille — flacon bordeaux sculptural." },
+        { img: "gucci-guilty-pour-homme.png", title: "Guilty Pour Homme", brand: "Gucci", wa: "Gucci Guilty Pour Homme", price: 900, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Double G métallique — lavande aromatique et bois." },
+        { img: "ysl-la-nuit-de-lhomme-eau-electrique.png", title: "La Nuit de L’Homme — Eau Électrique", brand: "Yves Saint Laurent", wa: "La Nuit de L’Homme Eau Électrique", price: 900, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Bleu minéral — twist moderne sur la garde-robe masculine." },
+        { img: "guerlain-lhomme-ideal.png", title: "L’Homme Idéal", brand: "Guerlain", wa: "L’Homme Idéal Eau de Parfum de Guerlain", price: 940, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Amande et cuir velours — french chic absolu." },
+        { img: "montblanc-explorer-platinum.png", title: "Explorer Platinum", brand: "Montblanc", wa: "Montblanc Explorer Platinum", price: 920, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Sillage métallique aromatique — édition platinum." },
+        { img: "ysl-myslf.png", title: "MYSLF", brand: "Yves Saint Laurent", wa: "MYSLF de Yves Saint Laurent", price: 900, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Monochrome noir — fleurs et bois pour un masculin lumineux." },
+        { img: "ysl-y-eau-de-parfum.png", title: "Y — Eau de Parfum", brand: "Yves Saint Laurent", wa: "Y Eau de Parfum de Yves Saint Laurent", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Signature bleu ardoise — sage et amberwoods." },
+        { img: "armani-stronger-with-you-intensely.png", title: "Stronger With You Intensely", brand: "Emporio Armani", wa: "Stronger With You Intensely", price: 900, cats: ["luxe", "oriental"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Vanille torréfiée et fève tonka — chaleur addictive." },
+        { img: "mancera-roses-vanille.png", title: "Roses Vanille", brand: "Mancera Paris", wa: "Mancera Roses Vanille", price: 900, cats: ["niche", "oriental"], gender: ["feminin"], badge: "Niche", badgeClass: "badge-niche", desc: "Rose jammy et vanille crémeuse — niche ultra portable." },
+        { img: "hugo-boss-bottled-night.png", title: "Boss Bottled Night", brand: "Hugo Boss", wa: "Boss Bottled Night", price: 900, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Lavande et bois sombres — polyvalent jour et soirée." },
+        { img: "viktor-rolf-spicebomb.png", title: "Spicebomb", brand: "Viktor & Rolf", wa: "Spicebomb de Viktor & Rolf", price: 900, cats: ["luxe", "oriental"], gender: ["masculin"], badge: "Oriental", badgeClass: "badge-oriental", desc: "Grenade couture — épices et cuir suédé." },
+        { img: "creed-aventus.png", title: "Aventus", brand: "Creed", wa: "Creed Aventus", price: 2350, cats: ["niche"], gender: ["masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "La légende au pegasus — fruité boisé roi du niche." },
+        { img: "armani-acqua-di-gio.png", title: "Acqua di Giò", brand: "Giorgio Armani", wa: "Acqua di Giò", price: 900, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Frais", badgeClass: "badge-frais", desc: "Aquatique citrus iconique — fraîcheur méditerranéenne." },
+        { img: "tom-ford-neroli-portofino.png", title: "Neroli Portofino", brand: "Tom Ford", wa: "Tom Ford Neroli Portofino", price: 2080, cats: ["niche", "frais"], gender: ["feminin", "masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Néroli éclatant façon Riviera — mixte été." },
+        { img: "shl-venom-incarnat.png", title: "Venom Incarnat", brand: "Stéphane Humbert Lucas", wa: "Venom Incarnat de SHL Paris", price: 1780, cats: ["niche", "oriental"], gender: ["feminin"], badge: "Niche", badgeClass: "badge-niche", desc: "Œuvre serpent collector — oriental floral précieux." },
+        { img: "lv-limmensite.png", title: "L’Immensité", brand: "Louis Vuitton", wa: "L’Immensité de Louis Vuitton", price: 2600, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Gingembre grapefruit — ligne masculine LV." },
+        { img: "lv-afternoon-swim.png", title: "Afternoon Swim", brand: "Louis Vuitton", wa: "Afternoon Swim de Louis Vuitton", price: 2600, cats: ["luxe", "frais"], gender: ["feminin", "masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Bleu turquoise — cologne solaire Les Extraits." },
+        { img: "givenchy-linterdit-rouge.png", title: "L’Interdit Rouge", brand: "Givenchy", wa: "L’Interdit Eau de Parfum Rouge de Givenchy", price: 950, cats: ["luxe", "oriental"], gender: ["feminin"], badge: "Féminin", badgeClass: "badge-feminin", desc: "Tuberose sang et épices — silhouette Givenchy couture." },
+        { img: "shl-sand-dance.png", title: "Sand Dance", brand: "Stéphane Humbert Lucas", wa: "Sand Dance de SHL Paris", price: 1720, cats: ["niche", "oriental"], gender: ["feminin", "masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Ambre désert et cobra doré — voyage oriental niche." },
+        { img: "lv-imagination.png", title: "Imagination", brand: "Louis Vuitton", wa: "Imagination de Louis Vuitton", price: 2600, cats: ["luxe", "frais"], gender: ["masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Thé noir bergamote — bleu limpide masculine LV." },
+        { img: "lv-pacific-chill.png", title: "Pacific Chill", brand: "Louis Vuitton", wa: "Pacific Chill de Louis Vuitton", price: 2600, cats: ["luxe", "frais"], gender: ["feminin", "masculin"], badge: "Luxe", badgeClass: "badge-frais", desc: "Arc-en-ciel vert océan — vitalité Californie LV." },
+        { img: "givenchy-gentleman-collector.png", title: "Gentleman — Édition collector", brand: "Givenchy", wa: "Givenchy Gentleman édition collector", price: 980, cats: ["luxe"], gender: ["masculin"], badge: "Luxe", badgeClass: "", desc: "Flacon noir signature 4G — woody iris intense." },
+        { img: "ysl-tuxedo.png", title: "Tuxedo", brand: "Yves Saint Laurent — Vestiaire", wa: "Tuxedo du Vestiaire des Parfums YSL", price: 2380, cats: ["luxe", "niche", "oriental"], gender: ["feminin", "masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Patchouli épices smoking — couture olfactive mixte." },
+        { img: "ysl-supreme-bouquet.png", title: "Supreme Bouquet", brand: "Yves Saint Laurent — Vestiaire", wa: "Supreme Bouquet du Vestiaire YSL", price: 2280, cats: ["luxe", "oriental"], gender: ["feminin"], badge: "Oriental", badgeClass: "badge-oriental", desc: "Flacon or — bouquet oriental floraux précieux." },
+        { img: "dg-devotion.png", title: "Devotion", brand: "Dolce & Gabbana", wa: "Devotion de Dolce & Gabbana", price: 930, cats: ["luxe"], gender: ["feminin"], badge: "Féminin", badgeClass: "badge-feminin", desc: "Sacré-Cœur DG — vanille florale lumineuse." },
+        { img: "shl-god-of-fire.png", title: "God of Fire", brand: "Stéphane Humbert Lucas", wa: "God of Fire de SHL Paris", price: 1820, cats: ["niche", "oriental"], gender: ["feminin", "masculin"], badge: "Niche", badgeClass: "badge-niche", desc: "Turquoise serpent — mangue et ambre, pièce niche signature." },
+        { img: "shl-pink-boa.png", title: "Pink Boa", brand: "Stéphane Humbert Lucas", wa: "Pink Boa de SHL Paris", price: 1760, cats: ["niche", "oriental"], gender: ["feminin"], badge: "Niche", badgeClass: "badge-niche", desc: "Rose fluo bijou — oriental floraux contemporain." },
+        { img: "lv-attrape-reves.png", title: "Attrape-Rêves", brand: "Louis Vuitton", wa: "Attrape-Rêves de Louis Vuitton", price: 2600, cats: ["luxe", "oriental"], gender: ["feminin"], badge: "Luxe", badgeClass: "badge-feminin", desc: "Rosée cacao — féminité voyage LV." },
+        { img: "burberry-goddess.png", title: "Goddess", brand: "Burberry", wa: "Burberry Goddess", price: 900, cats: ["luxe"], gender: ["feminin"], badge: "Féminin", badgeClass: "badge-feminin", desc: "Vanilles trio — beige sunburst britannique." }
+      ];
+
+      function matchesFilter(p, fid) {
+        if (fid === "all") return true;
+        if (fid === "luxe" || fid === "niche" || fid === "oriental" || fid === "frais") {
+          return p.cats.indexOf(fid) !== -1;
+        }
+        if (fid === "feminin") return p.gender.indexOf("feminin") !== -1;
+        if (fid === "masculin") return p.gender.indexOf("masculin") !== -1;
+        return true;
+      }
+
+      function renderGrid(fid) {
+        var grid = document.getElementById("perfume-grid");
+        grid.innerHTML = "";
+        var list = perfumes.filter(function (p) {
+          return matchesFilter(p, fid);
+        });
+        if (!list.length) {
+          var empty = document.createElement("p");
+          empty.className = "cards-empty";
+          empty.textContent = "Aucun parfum dans cette catégorie pour le moment.";
+          grid.appendChild(empty);
+          return;
+        }
+        list.forEach(function (p, index) {
+          var art = document.createElement("article");
+          art.className = "card" + (motionOk ? " card--enter" : "");
+          if (motionOk) art.style.setProperty("--i", String(index));
+          var wrap = document.createElement("div");
+          wrap.className = "card-img-wrap";
+          var badge = document.createElement("span");
+          badge.className = "card-badge" + (p.badgeClass ? " " + p.badgeClass : "");
+          badge.textContent = p.badge;
+          var im = document.createElement("img");
+          im.src = "images/" + p.img;
+          im.alt = p.title + " — " + p.brand;
+          im.loading = "lazy";
+          im.decoding = "async";
+          if (p.imgPos) im.style.objectPosition = p.imgPos;
+          wrap.appendChild(badge);
+          wrap.appendChild(im);
+          var body = document.createElement("div");
+          body.className = "card-body";
+          var h = document.createElement("h3");
+          h.textContent = p.title;
+          var br = document.createElement("p");
+          br.className = "card-brand";
+          br.textContent = p.brand;
+          var d = document.createElement("p");
+          d.className = "card-desc";
+          d.textContent = p.desc;
+          var price = document.createElement("p");
+          price.className = "card-price";
+          var amt = document.createElement("span");
+          amt.className = "amount";
+          amt.textContent = String(p.price).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f");
+          price.appendChild(amt);
+          price.appendChild(document.createTextNode(" DH"));
+          var a = document.createElement("a");
+          a.className = "btn-wa";
+          a.href = waUrl(p.wa);
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = "Commander sur WhatsApp";
+          a.setAttribute("aria-label", "Commander " + p.title + " sur WhatsApp");
+          body.appendChild(h);
+          body.appendChild(br);
+          body.appendChild(d);
+          body.appendChild(price);
+          body.appendChild(a);
+          art.appendChild(wrap);
+          art.appendChild(body);
+          grid.appendChild(art);
+        });
+      }
+
+      var activeFilter = "all";
+      renderGrid(activeFilter);
+
+      document.querySelectorAll(".filter-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activeFilter = btn.getAttribute("data-filter") || "all";
+          document.querySelectorAll(".filter-btn").forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle("is-active", on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
+          });
+          renderGrid(activeFilter);
+        });
+      });
+
+      document.querySelectorAll(".wa-num-link").forEach(function (a) {
+        a.href = waContactUrl();
+      });
+
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+
+      function setMenuOpen(open) {
+        var toggle = document.querySelector(".nav-toggle");
+        var mobileNav = document.getElementById("nav-mobile");
+        if (!toggle || !mobileNav) return;
+        mobileNav.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+        document.body.style.overflow = open ? "hidden" : "";
+      }
+
+      var toggle = document.querySelector(".nav-toggle");
+      var mobileNav = document.getElementById("nav-mobile");
+      if (toggle && mobileNav) {
+        toggle.addEventListener("click", function () {
+          setMenuOpen(!mobileNav.classList.contains("is-open"));
+        });
+        mobileNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            setMenuOpen(false);
+          });
+        });
+        document.addEventListener("keydown", function (ev) {
+          if (ev.key === "Escape" && mobileNav.classList.contains("is-open")) {
+            setMenuOpen(false);
+          }
+        });
+      }
+
+      /* Révélation au scroll & bandeau confiance */
+      if (motionOk) {
+        var revealEls = document.querySelectorAll(".reveal");
+        var ioReveal = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-revealed");
+                ioReveal.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -5% 0px", threshold: 0.02 }
+        );
+        revealEls.forEach(function (el) {
+          ioReveal.observe(el);
+        });
+
+        var trustStrip = document.getElementById("trust-strip");
+        if (trustStrip) {
+          var ioTrust = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  trustStrip.classList.add("trust-visible");
+                  ioTrust.unobserve(trustStrip);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -5% 0px", threshold: 0.12 }
+          );
+          ioTrust.observe(trustStrip);
+        }
+      } else {
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("is-revealed");
+        });
+        var tsEl = document.getElementById("trust-strip");
+        if (tsEl) tsEl.classList.add("trust-visible");
+      }
+
+      /* Ombre header au défilement */
+      var headerEl = document.querySelector(".site-header");
+      function syncHeader() {
+        if (headerEl) {
+          headerEl.classList.toggle("is-scrolled", window.scrollY > 28);
+        }
+      }
+      var hdrTick = false;
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (!hdrTick) {
+            requestAnimationFrame(function () {
+              syncHeader();
+              hdrTick = false;
+            });
+            hdrTick = true;
+          }
+        },
+        { passive: true }
+      );
+      syncHeader();
+    })();
+  </script>
+</body>
+</html>
